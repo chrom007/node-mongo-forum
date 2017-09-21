@@ -1,0 +1,29 @@
+{
+  "name": "node-mongo-forum",
+  "version": "1.0.0",
+  "description": "Forum build on NodeJS server with MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrom007/node-mongo-forum.git"
+  },
+  "keywords": [
+    "mvc",
+    "node",
+    "nodejs",
+    "mongodb",
+    "javascript"
+  ],
+  "author": "CHROM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrom007/node-mongo-forum/issues"
+  },
+  "homepage": "https://github.com/chrom007/node-mongo-forum#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
