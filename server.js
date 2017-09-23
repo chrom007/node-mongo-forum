@@ -10,7 +10,7 @@ const app = express();
 
 //MODELS
 const Database = require("./models/database");
-var db = new Database(config.db_host, config.db_user, config.db_pass, config.db_name).connect((database) => {db = database});
+var db = new Database(config.db_host, config.db_user, config.db_pass, config.db_port, config.db_name).connect((database) => {db = database});
 
 	
 // SETTINGS
@@ -23,8 +23,8 @@ ejs.delimiter = '?';
 
 // ROUTING
 app.get("/", (req, res) => {
-	db.collection("news").findOne((e, item) => {
-		res.send(item).end();
+	db.collection("news").findOne((e, data) => {
+		res.render("index", data);
 	});
 });
 
