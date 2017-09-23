@@ -1,3 +1,5 @@
 node_modules
-config.rb
+sftp-config.json
+config.*
 *.log
+*.sublime-*

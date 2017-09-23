@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/chrom007/node-mongo-forum#readme",
   "dependencies": {
-    "express": "^4.15.4"
+    "colors": "^1.1.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31"
   }
 }
