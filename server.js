@@ -2,6 +2,7 @@ const express = require("express");
 const colors = require("colors");
 const ejs = require("ejs");
 const config = require("./config.json");
+const bodyParser = require('body-parser')
 
 // VARIABLES
 const DIR = __dirname;
@@ -24,6 +25,8 @@ var db = new (require("./models/database"))(config.db_host, config.db_user, conf
 app.use(express.static(DIR + "/static"));
 app.set('view engine', 'html');
 app.engine('html', ejs.renderFile);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 ejs.delimiter = '?';
 

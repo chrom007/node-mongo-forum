@@ -23,14 +23,15 @@ class Router extends Controller {
 	}
 
 	thread() {
-		this.app.get("/thread", (req, res) => {
-			console.log("THREAD");
-		});
-	}
+		this.app.get("/thread/:id", (req, res) => {
+			var id = req.params.id;
 
-	dima() {
-		this.app.get("/dima", (req, res) => {
-			res.send("DIMA").end();
+			this.db.collection("news").findOne({_id: this.ObjectID(id)}, (e, data) => {
+				this.db.collection("comments").find({parent: id}).toArray((e, comments) => {
+					res.render("thread", {thread: data, comments: comments});
+					console.log(comments);
+				});
+			});
 		});
 	}
 

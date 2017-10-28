@@ -1,0 +1,22 @@
+<? include layout_head.html ?>
+
+<div class="thread">
+	<div class="main">
+		<h1><a href="/thread/<?=thread._id?>"><?=thread.name?></a></h1>
+		<p><?=thread.text?></p>
+		<i>By <b><?=thread.author?></b> <?=thread.date?></i>
+	</div>
+
+	<div class="comments">
+		<? if (comments) { ?>
+			<? for (var a in comments) { ?>
+			<div class="item">
+				<b><?=comments[a].author ?></b>:
+				<?=comments[a].text ?>
+			</div>
+			<? } ?>
+		<? } ?>
+	</div>
+</div>
+
+<? include layout_footer.html ?>

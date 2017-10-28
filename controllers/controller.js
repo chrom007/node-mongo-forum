@@ -1,6 +1,6 @@
 class Controller {
 	constructor() {
-
+		this.ObjectID = require("mongodb").ObjectID;
 	}
 }
 
