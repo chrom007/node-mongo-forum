@@ -1,0 +1,57 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	min-height: 100%;
+	background: #ddd;
+	font-family: "Open Sans";
+}
+
+h1, h2, h3, p {
+	margin: 0px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.head {
+	font-size: 40px;
+	font-weight: 100;
+	text-align: center;
+	margin: 30px auto;
+	width: 600px;
+}
+
+.threads {
+	width: 600px;
+	margin: auto;
+}
+
+.threads .item {
+	width: 100%;
+	padding: 15px;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+	background: white;
+	border: 1px solid rgba(0,0,0,0.175);	
+}
+.threads .item h1 {
+	color: #2980b9;
+	font-weight: 400;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+.threads .item p {
+	font-weight: 100;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+.threads .item i {
+	display: block;
+	font-weight: 100;
+	font-size: 14px;
+	font-style: normal;
+}
