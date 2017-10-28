@@ -7,10 +7,17 @@ const config = require("./config.json");
 const DIR = __dirname;
 const app = express();
 
+//Controllers
+var MainController = new (require("./controllers/main_controller.js"))();
+var RouterController = new (require("./controllers/router_controller.js"))(app);
 
 //MODELS
-const Database = require("./models/database");
-var db = new Database(config.db_host, config.db_user, config.db_pass, config.db_port, config.db_name).connect((database) => {db = database});
+var db = new (require("./models/database"))(config.db_host, config.db_user, config.db_pass, config.db_port, config.db_name).connect((database) => {
+	RouterController.database(database);
+	db = database;
+
+	//RouterController.insert();
+});
 
 	
 // SETTINGS
@@ -22,11 +29,8 @@ ejs.delimiter = '?';
 
 
 // ROUTING
-app.get("/", (req, res) => {
-	db.collection("news").findOne((e, data) => {
-		res.render("index", data);
-	});
-});
+RouterController.home();
+RouterController.thread();
 
 
 // STARTING

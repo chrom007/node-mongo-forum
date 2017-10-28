@@ -1,3 +1,13 @@
-<h1><?=name?></h1>
-<p><?=text?></p>
-<i>By <b><?=author?></b> <?=date?></i>
+<? include layout_head.html ?>
+
+<div class="threads">
+	<? for(var a in data) {var item = data[a] ?>
+	<div class="item">
+		<h1><a href="/thread/<?=item._id?>"><?=item.name?></a></h1>
+		<p><?=item.text?></p>
+		<i>By <b><?=item.author?></b> <?=item.date?></i>
+	</div>
+	<? } ?>
+</div>
+
+<? include layout_footer.html ?>
